@@ -1,0 +1,17 @@
+{% load static %}
+{% load cache_bust %}
+<head>
+    <meta charset="utf-8">
+    <title>Page title comes here!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="blue">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{% static "images/favicon.ico" %}?{% cache_bust %}" type="image/x-icon">
+    <link rel="mask-icon" href="{% static "images/govuk-mask-icon.svg" %}?{% cache_bust %}" color="blue">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/ortho-apple-touch-icon-180x180.png" %}?{% cache_bust %}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{% static "images/ortho-apple-touch-icon-167x167.png" %}?{% cache_bust %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static "images/ortho-apple-touch-icon-152x152.png" %}?{% cache_bust %}">
+    <link rel="apple-touch-icon" href="{% static "images/ortho-apple-touch-icon.png" %}?{% cache_bust %}">
+    <link href="{% static "css/govuk-all.css" %}?{% cache_bust %}" rel="stylesheet">
+    <meta property="og:image" content="&lt;YOUR-DOMAIN&gt;/images/your-domain-opengraph-image.png">
+</head>
