@@ -1,6 +1,9 @@
-<html>
-    <body>
-        <h1>Hello World!</h1>
-        Home template comes here!
-    </body>
-</html>
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <a href="#" class="govuk-back-link">Back</a>
+    <h1>Hello World!</h1>
+    Home template comes here!
+{% endblock content %}
