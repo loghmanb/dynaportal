@@ -2,8 +2,15 @@
 {% load static %}
 {% load humanize %}
 
+{% load text_input %}
+
 {% block content %}
-    <a href="#" class="govuk-back-link">Back</a>
-    <h1>Hello World!</h1>
-    Home template comes here!
+<h1 class="govuk-heading-xl">Customised page template 123</h1>
+
+{% for field in fields %}
+    {% if field.field_type.name == 'INPUT_TEXT' %}
+{% text_input field %}
+    {% endif %}
+{% endfor %}
+
 {% endblock content %}
