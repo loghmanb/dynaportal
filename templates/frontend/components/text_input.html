@@ -1,0 +1,30 @@
+{% extends "frontend/components/base_component/base_component.html" %}
+{% load common %}
+{% block component_body %}
+{% if one_question %}
+<h1 class="govuk-label-wrapper">
+  <label class="govuk-label govuk-label--l" for="{{ field.id }}">
+    {{ field.question }}
+  </label>
+</h1>
+{% else %}
+<label class="govuk-label" for="{{ field.id }}">
+  {{ field.caption }}
+</label>
+{% endif %}
+{% hint field.hint %}
+{% field_error field.error %}
+<div class="govuk-input__wrapper">
+  {% if field.options|item:"input_prefix" %}
+  <div class="govuk-input__prefix" aria-hidden="true">{{ field.options|item:"input_prefix" }}</div>
+  {% endif %}
+  <input type="text" 
+    class="govuk-input {% if field.size or True %} govuk-input--width-{{field.size}} {% endif %}{% if field.error %} govuk-input--error {% endif %}{% if field.options|item:"is_code" %} govuk-input--extra-letter-spacing {% endif %}" 
+    id="{{ field.id }}" name="{{ field.name }}"  autocomplete="field.autocomplete"
+    maxlength="{% if field.size %}{{field.size}}{% endif %}"
+    spellcheck="{% if field.options|item:"spellchecker" == False %}false{% endif %}">
+  {% if field.options|item:"input_suffix" %}
+  <div class="govuk-input__suffix" aria-hidden="true">{{field.options|item:"input_suffix"}}</div>
+  {% endif %}
+</div>
+{% endblock %}
