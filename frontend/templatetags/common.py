@@ -18,7 +18,7 @@ def field_error(string: str):
 
 
 @register.filter(is_safe=True)
-def item(options: dict | list, idx: int | str) -> any:
+def item(options: dict | list, idx: int | str, default_value=None) -> any:
     """Item filter."""
     default_value = None
     if options:
