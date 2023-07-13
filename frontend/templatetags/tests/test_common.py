@@ -26,6 +26,6 @@ class ItemFilterTestCase(TestCase):
     def test_reurn_default_if_item_is_not_found(self):
         """Test return default value if item not found."""
         result = item({'foo': 'bar'}, "abc", "efg")
-        self.assertEquals(result, "efg")
+        self.assertEqual(result, "efg")
         result = item(['foo', 'bar'], 2, "efg")
-        self.assertEquals(result, "efg")
+        self.assertEqual(result, "efg")
