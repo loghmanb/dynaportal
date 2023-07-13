@@ -26,10 +26,11 @@ def item(options: dict | list, idx: int | str) -> any:
             args = idx.split(',')
             if len(args)>1:
                 idx = args[0]
+                if isinstance(options, list):
+                    idx = int(idx)
                 default_value = args[1]
         if isinstance(options, dict):
             return options.get(idx, default_value)
         elif len(options) > idx:
-            idx = int(idx)
             return options[idx]
     return default_value
