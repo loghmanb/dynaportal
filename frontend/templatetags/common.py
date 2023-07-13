@@ -18,11 +18,11 @@ def field_error(string: str):
 
 
 @register.filter(is_safe=True)
-def item(options: dict | list, idx: int | str) -> any:
+def item(options: dict | list, idx: int | str, default_value=None) -> any:
     """Item filter."""
     if options:
         if isinstance(options, dict):
-            return options.get(idx)
+            return options.get(idx, default_value)
         elif len(options) > idx:
             return options[idx]
-    return None
+    return default_value
