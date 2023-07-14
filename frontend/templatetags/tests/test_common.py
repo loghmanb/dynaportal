@@ -29,3 +29,12 @@ class ItemFilterTestCase(TestCase):
         self.assertEqual(result, "efg")
         result = item(['foo', 'bar'], "2,efg")
         self.assertEqual(result, "efg")
+
+    def test_return_default_if_options_is_none_or_empty(self):
+        """Test return default value if options is none or empty."""
+        result = item({}, "abc,efg")
+        self.assertEqual(result, "efg")
+        result = item([], "2,efg")
+        self.assertEqual(result, "efg")
+        result = item(None, "2,efg")
+        self.assertEqual(result, "efg")
