@@ -4,6 +4,15 @@ from django.test.testcases import TestCase
 from ..common import item
 
 
+class FieldLabelTestCase(TestCase):
+    """Field Lablel test cases."""
+
+class HintTestCase(TestCase):
+    """Hint test cases."""
+
+class FieldErrorTestCase(TestCase):
+    """Field Error test cases."""
+
 class ItemFilterTestCase(TestCase):
     """Item filter test cases."""
     def test_if_is_not_found_in_dict_or_list(self):
