@@ -6,6 +6,7 @@
     {% field_label field.id field.caption one_question %}
   </legend>
   {% hint field.hint %}
+  {% field_error field.error %}
   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
     {% for item in field.options|item:"items" %}
     <div class="govuk-checkboxes__item">

@@ -12,6 +12,7 @@ def home(request):
             FieldType.CHECKBOXES,
             "Will you be travelling to any of these countries?",
             hint="Select all countries that apply.",
+            error="Sample error message comes here.",
             options={
                 "items": [
                     {
