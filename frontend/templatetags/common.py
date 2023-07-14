@@ -4,6 +4,11 @@ from django import template
 
 register = template.Library()
 
+@register.inclusion_tag('frontend/components/base_component/field_label.html')
+def field_label(field_id: str, string: str, bold: bool):
+    """Hint tag."""
+    return {"field_id": field_id, "field_label": string, "bold": bold}
+
 
 @register.inclusion_tag('frontend/components/base_component/hint.html')
 def hint(string: str):
