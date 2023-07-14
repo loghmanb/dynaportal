@@ -1,4 +1,4 @@
-"""Module for teting Cache Bust tag."""
+"""Module for testing Cache Bust tag."""
 import os
 
 from project.utils import BaseTestCase

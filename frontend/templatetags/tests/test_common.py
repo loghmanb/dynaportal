@@ -25,7 +25,23 @@ class ItemFilterTestCase(TestCase):
 
     def test_reurn_default_if_item_is_not_found(self):
         """Test return default value if item not found."""
-        result = item({'foo': 'bar'}, "abc", "efg")
+        result = item({'foo': 'bar'}, "abc,efg")
         self.assertEqual(result, "efg")
-        result = item(['foo', 'bar'], 2, "efg")
+        result = item(['foo', 'bar'], "2,efg")
         self.assertEqual(result, "efg")
+
+    def test_return_default_if_options_is_none_or_empty(self):
+        """Test return default value if options is none or empty."""
+        result = item({}, "abc,efg")
+        self.assertEqual(result, "efg")
+        result = item([], "2,efg")
+        self.assertEqual(result, "efg")
+        result = item(None, "2,efg")
+        self.assertEqual(result, "efg")
+
+    def test_return_second_para_if_first_is_not_exist(self):
+        """Test return second parameter if the first one is not exists."""
+        result = item({"second": "second-val"}, "first|second,def")
+        self.assertEqual(result, "second-val")
+        result = item({}, "first|second,def")
+        self.assertEqual(result, "def")
