@@ -42,7 +42,13 @@ def home(request):
             one_question and "What is your home address?" or "Weight, in kilograms",
             hint="What is the name of the event?",
             error="Enter an event name 123",
-            options={"size":5,"input_prefix": "£", "input_suffix": "per item 123", "is_code": True, "spellchecker": False},
+            options={
+                "size": 5,
+                "input_prefix": "£",
+                "input_suffix": "per item 123",
+                "is_code": True,
+                "spellchecker": False
+                }
             ),
     ]
 
