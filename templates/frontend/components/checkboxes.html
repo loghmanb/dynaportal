@@ -9,10 +9,15 @@
   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
     {% for item in field.options|item:"items" %}
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="{{field.id}}-{{item}}" name="{{field.name}}" type="checkbox" value="{{item}}">
+      <input class="govuk-checkboxes__input" id="{{field.id}}-{{item|item:'value'}}" name="{{field.name}}" type="checkbox" value="{{item|item:'value'}}">
       <label class="govuk-label govuk-checkboxes__label" for="{{field.name}}">
-        {{item}}
+        {{item|item:'caption'}}
       </label>
+      {% if item|item:'hint' %}
+      <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+        {{ item|item:'hint' }}
+      </div>
+      {% endif %}
     </div>
     {% endfor %}
     <div class="govuk-checkboxes__divider">or</div>

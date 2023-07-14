@@ -10,10 +10,23 @@ def home(request):
             "countries-id",
             "countries",
             FieldType.CHECKBOXES,
-            "What is your nationality?",
-            hint="If you have dual nationality, select all options that are relevant to you.",
+            "Will you be travelling to any of these countries?",
+            hint="Select all countries that apply.",
             options={
-                "items": ["France", "Portugal","Spain", ]
+                "items": [
+                    {
+                        "caption": "France", 
+                        "value": "fr",
+                        "hint": "including French Southern and Antarctic Lands"
+                    },
+                    {
+                        "caption": "Portugal",
+                        "value": "pr",
+                    },
+                    {
+                        "caption": "Spain",
+                        "value": "sp",
+                    }]
             }
         ),
          Field(
