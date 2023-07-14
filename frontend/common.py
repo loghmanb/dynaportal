@@ -16,7 +16,6 @@ class Field:
     name: str
     field_type: FieldType
     caption: str
-    question: str = ""
     hint: str = ""
     error: str = ""
     options: dict = field(default_factory=dict)

@@ -20,7 +20,6 @@ class InputTextTest(BaseTestCase):
             "address-line-name",
             FieldType.INPUT_TEXT,
             "Home Address",
-            question="What is your home address?",
         )
         rendered = self.render_template(self.sample_template, {'field': field})
         self.assertEqual(rendered, '<div class="govuk-form-group ">\n    \n\n<label class="govuk-label" for="address-line-id">\n  Home Address\n</label>\n\n\n\n\n\n<div class="govuk-input__wrapper">\n  \n  <input type="text" \n    class="govuk-input " \n    id="address-line-id" name="address-line-name"\n    \n    \n    >\n  \n</div>\n\n</div>\n')
@@ -31,8 +30,7 @@ class InputTextTest(BaseTestCase):
             "address-line-id",
             "address-line-name",
             FieldType.INPUT_TEXT,
-            "Home Address",
-            question="What is your home address?",
+            "What is your home address?",
         )
         rendered = self.render_template(
             self.sample_template,
