@@ -14,6 +14,7 @@ class Field:
     id: str
     name: str
     field_type: FieldType
+    caption: str
     question: str = ""
     hint: str = ""
     error: str = ""
