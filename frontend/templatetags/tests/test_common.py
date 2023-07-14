@@ -34,8 +34,21 @@ class FieldLabelTestCase(BaseTestCase):
 class HintTestCase(BaseTestCase):
     """Hint test cases."""
 
+    def test_hint(self) -> None:
+        """Test hint."""
+        template = '{% load common %}{% hint string %}'
+        rendered = self.render_template(template, {'string': 'Sample hint comes here.'})
+        self.assertEqual(rendered, '<div class="govuk-hint">Sample hint comes here.</div>')
+
+
 class FieldErrorTestCase(BaseTestCase):
     """Field Error test cases."""
+
+    def test_field_error_label(self) -> None:
+        """Setup."""
+        template = '{% load common %}{% field_error string %}'
+        rendered = self.render_template(template, {'string': 'Sample serror text comes here!'})
+        self.assertEqual(rendered, '<p class="govuk-error-message">\n    <span class="govuk-visually-hidden">Error:</span> Sample serror text comes here!\n</p>')
 
 class ItemFilterTestCase(TestCase):
     """Item filter test cases."""
