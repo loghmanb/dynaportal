@@ -14,9 +14,8 @@ class Field:
     id: str
     name: str
     field_type: FieldType
-    autocomplete: str = ""
+    caption: str
     question: str = ""
-    size: int = 0
     hint: str = ""
     error: str = ""
     options: dict = field(default_factory=dict)
