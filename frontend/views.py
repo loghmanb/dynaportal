@@ -26,7 +26,8 @@ def home(request):
                     {
                         "caption": "Spain",
                         "value": "sp",
-                    }]
+                    }],
+                "none": "No, I will not be travelling to any of these countries",
             }
         ),
          Field(
