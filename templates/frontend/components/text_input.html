@@ -21,7 +21,7 @@
   <input type="text" 
     class="govuk-input {% if field.size or True %} govuk-input--width-{{field.size}} {% endif %}{% if field.error %} govuk-input--error {% endif %}{% if field.options|item:"is_code" %} govuk-input--extra-letter-spacing {% endif %}" 
     id="{{ field.id }}" name="{{ field.name }}"  autocomplete="{{ field.options|item:"autocomplete," }}"
-    maxlength="{% if field.size %}{{field.size}}{% endif %}"
+    maxlength="{% if field.options|item:"size" %}{{field.size|item:"size"}}{% endif %}"
     spellcheck="{% if field.options|item:"spellchecker" == False %}false{% endif %}">
   {% if field.options|item:"input_suffix" %}
   <div class="govuk-input__suffix" aria-hidden="true">{{field.options|item:"input_suffix"}}</div>
