@@ -46,22 +46,6 @@ def home(request):
             error="Enter an event name 123",
             options={"size":5,"input_prefix": "£", "input_suffix": "per item 123", "is_code": True, "spellchecker": False},
             ),
-        Field(
-            "weight-id",
-            "weight-1",
-            FieldType.INPUT_TEXT,
-            "Weight, in kilograms",
-            question="What is your home address?",
-            hint="What is the name of the event?",
-            error="Enter an event name 123",
-            options={
-                "size": 5,
-                "input_prefix": "£",
-                "input_suffix": "per item 123",
-                "is_code": True,
-                "spellchecker": False
-                }
-            ),
     ]
 
     return render(request, 'frontend/home.html', context={"fields": fields, 'one_question': one_question})
