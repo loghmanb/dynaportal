@@ -1,16 +1,40 @@
 """Module for testing common tags and filters."""
 from django.test.testcases import TestCase
 
+from project.utils import BaseTestCase
 from ..common import item
 
 
-class FieldLabelTestCase(TestCase):
+class FieldLabelTestCase(BaseTestCase):
     """Field Lablel test cases."""
 
-class HintTestCase(TestCase):
+    def setUp(self) -> None:
+        """Setup."""
+        self.template = (
+            '{% load common %}'
+            '{% field_label id string bold %}'
+        )
+
+    def test_normal_label(self):
+        """Test normal label."""
+        rendered = self.render_template(
+            self.template,
+            {'id': 123, 'string': 'Test label', 'bold': False}
+            )
+        self.assertEqual(rendered, '<label class="govuk-label" for="123">\n  Test label\n</label>')
+
+    def test_bold_label(self):
+        """Test bold label."""
+        rendered = self.render_template(
+            self.template,
+            {'id': 123, 'string': 'Test label', 'bold': True}
+            )
+        self.assertEqual(rendered, '<h1 class="govuk-label-wrapper">\n  <label class="govuk-label govuk-label--l" for="123">\n    Test label\n  </label>\n</h1>')
+
+class HintTestCase(BaseTestCase):
     """Hint test cases."""
 
-class FieldErrorTestCase(TestCase):
+class FieldErrorTestCase(BaseTestCase):
     """Field Error test cases."""
 
 class ItemFilterTestCase(TestCase):
