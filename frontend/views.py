@@ -4,13 +4,35 @@ from .common import Field, FieldType
 
 
 def home(request):
+    one_question = False
     fields = [
+         Field(
+            "address-line-id",
+            "address-line-name",
+            FieldType.INPUT_TEXT,
+            "Home Address",
+            question="What is your home address?",
+        ),
+        Field(
+            "post-code-id",
+            "post-code",
+            FieldType.INPUT_TEXT,
+            "Post Code",
+            hint="What is the post code for your home address?",
+            error="Enter a valid post code",
+            options={
+                "size": 7,
+                "input_size": 5,
+                "is_code": True,
+                "spellchecker": False
+                }),
         Field(
             "address-line-123",
             "address-line-1",
             FieldType.INPUT_TEXT,
+            "Weight, in kilograms",
             question="What is your home address?",
-            hint="The name you’ll use on promotional material 123",
+            hint="What is the name of the event?",
             error="Enter an event name 123",
             options={
                 "size": 5,
@@ -21,4 +43,4 @@ def home(request):
                 }),
     ]
 
-    return render(request, 'frontend/home.html', context={"fields": fields, 'one_question': len(fields)==1})
+    return render(request, 'frontend/home.html', context={"fields": fields, 'one_question': one_question})
