@@ -12,7 +12,7 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "project/settings.py"
+        "frontend/views.py"
       ]
     },
     "vscode": {

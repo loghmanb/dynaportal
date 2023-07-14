@@ -10,8 +10,7 @@ def home(request):
             "address-line-id",
             "address-line-name",
             FieldType.INPUT_TEXT,
-            "Home Address",
-            question="What is your home address?",
+            one_question and "What is your home address?" or "Home Address",
         ),
         Field(
             "post-code-id",
@@ -30,8 +29,7 @@ def home(request):
             "address-line-123",
             "address-line-1",
             FieldType.INPUT_TEXT,
-            "Weight, in kilograms",
-            question="What is your home address?",
+            one_question and "What is your home address?" or "Weight, in kilograms",
             hint="What is the name of the event?",
             error="Enter an event name 123",
             options={
