@@ -22,15 +22,20 @@ def item(options: dict | list, idx: int | str, default_value=None) -> any:
     """Item filter."""
     default_value = None
     if isinstance(idx, str):
-        args = idx.split(',')
+        args: int| list(str) = idx.split(',')
         if len(args)>1:
             idx = args[0]
-            if isinstance(options, list):
-                idx = int(idx)
             default_value = args[1]
+        if isinstance(options, list):
+            idx = int(idx)
+        else:
+            args = idx.split('|')
+            if len(args)<2:
+                args.append(None)
+
     if options:
         if isinstance(options, dict):
-            return options.get(idx, default_value)
+            return options.get(args[0], options.get(args[1], default_value))
         elif len(options) > idx:
             return options[idx]
     return default_value
