@@ -6,7 +6,33 @@ from .common import Field, FieldType
 def home(request):
     one_question = False
     fields = [
-         Field(
+        Field(
+            "countries-id",
+            "countries",
+            FieldType.CHECKBOXES,
+            "Will you be travelling to any of these countries?",
+            hint="Select all countries that apply.",
+            error="Sample error message comes here.",
+            options={
+                "style-bold-size": True,
+                "items": [
+                    {
+                        "caption": "France", 
+                        "value": "fr",
+                        "hint": "including French Southern and Antarctic Lands"
+                    },
+                    {
+                        "caption": "Portugal",
+                        "value": "pr",
+                    },
+                    {
+                        "caption": "Spain",
+                        "value": "sp",
+                    }],
+                "none": "No, I will not be travelling to any of these countries",
+            }
+        ),
+        Field(
             "address-line-id",
             "address-line-name",
             FieldType.INPUT_TEXT,
@@ -38,7 +64,12 @@ def home(request):
                 "input_suffix": "per item 123",
                 "is_code": True,
                 "spellchecker": False
-                }),
+                }
+            ),
+        Field("firstname",
+              "firstname",
+              FieldType.INPUT_TEXT,
+              "Firstname"),
     ]
-
+    
     return render(request, 'frontend/home.html', context={"fields": fields, 'one_question': one_question})

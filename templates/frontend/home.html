@@ -2,6 +2,7 @@
 {% load static %}
 {% load humanize %}
 
+{% load  checkboxes %}
 {% load text_input %}
 
 {% block content %}
@@ -10,6 +11,8 @@
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
 {% text_input field %}
+    {% elif field.field_type.name == 'CHECKBOXES' %}
+{% checkboxes field %}
     {% endif %}
 {% endfor %}
 
