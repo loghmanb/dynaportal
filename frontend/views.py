@@ -14,6 +14,7 @@ def home(request):
             hint="Select all countries that apply.",
             error="Sample error message comes here.",
             options={
+                "style-bold-size": True,
                 "items": [
                     {
                         "caption": "France", 
@@ -31,7 +32,7 @@ def home(request):
                 "none": "No, I will not be travelling to any of these countries",
             }
         ),
-         Field(
+        Field(
             "address-line-id",
             "address-line-name",
             FieldType.INPUT_TEXT,
@@ -65,6 +66,10 @@ def home(request):
                 "spellchecker": False
                 }
             ),
+        Field("firstname",
+              "firstname",
+              FieldType.INPUT_TEXT,
+              "Firstname"),
     ]
-
+    
     return render(request, 'frontend/home.html', context={"fields": fields, 'one_question': one_question})
