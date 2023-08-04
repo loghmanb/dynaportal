@@ -4,9 +4,12 @@
 
 {% load  checkboxes %}
 {% load text_input %}
+{% load button %}
 
 {% block content %}
 <h1 class="govuk-heading-xl">Customised page template 123</h1>
+
+{% button "Start 1" %}
 
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
