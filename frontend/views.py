@@ -7,6 +7,12 @@ def home(request):
     one_question = False
     fields = [
         Field(
+            "live-id",
+            "live",
+            FieldType.RADIOS,
+            "Where do you live?",
+        ),
+        Field(
             "countries-id",
             "countries",
             FieldType.CHECKBOXES,

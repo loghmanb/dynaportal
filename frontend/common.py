@@ -7,6 +7,7 @@ class FieldType(Enum):
     """Field type enum."""
     INPUT_TEXT = 1
     CHECKBOXES = 2
+    RADIOS = 3
 
 
 @dataclass
