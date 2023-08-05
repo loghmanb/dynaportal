@@ -5,7 +5,7 @@
       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
     </svg></a>
 {% else %}
-<button class="govuk-button" data-module="govuk-button">
+<button class="govuk-button {% if type == "secondary" %}govuk-button--secondary{% endif %}" data-module="govuk-button">
     {{ label }}
 </button>
 {% endif %}
