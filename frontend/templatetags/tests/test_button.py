@@ -9,7 +9,7 @@ class ButtonTest(BaseTestCase):
         """Setup."""
         self.template = (
             '{% load button %}'
-            '{% button label button_type %}'
+            '{% button label button_type disabled %}'
         )
 
     def test_button_start(self):
@@ -43,6 +43,13 @@ class ButtonTest(BaseTestCase):
     def test_button_inverse(self):
         rendered = self.render_template(
             self.template,
-            {'label': 'Create account', 'button_type': 'inverse'}
+            {'label': 'Create account', 'button_type': 'inverse'},
             )
         self.assertEqual(rendered, '\n<button class="govuk-button govuk-button--inverse" data-module="govuk-button">\n    Create account\n</button>\n')
+
+    def test_button_disabled(self):
+        rendered = self.render_template(
+            self.template,
+            {'label': 'Disabled button', 'button_type': 'primary', 'disabled': True},
+            )
+        self.assertEqual(rendered, '\n<button disabled="disabled" class="govuk-button " data-module="govuk-button">\n    Disabled button\n</button>\n')
