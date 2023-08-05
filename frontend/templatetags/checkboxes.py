@@ -1,4 +1,4 @@
-"""Module for InputText component."""
+"""Module for Checkboxes component."""
 from django import template
 
 from ..common import Field
@@ -10,6 +10,6 @@ register = template.Library()
         'frontend/components/checkboxes.html',
         takes_context=True)
 def checkboxes(context: dict, field: Field) -> dict[str, Field]:
-    """Input text tag."""
+    """Checkboxes tag."""
     context['field'] = field
     return context
