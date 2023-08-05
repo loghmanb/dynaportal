@@ -9,7 +9,8 @@
 {% block content %}
 <h1 class="govuk-heading-xl">Customised page template 123</h1>
 
-{% button "Start 1" %}
+{% button "Test Button" "primary" %}
+{% button "Start 1" "secondary" %}
 
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
