@@ -9,11 +9,14 @@
 {% block content %}
 <h1 class="govuk-heading-xl">Customised page template 123</h1>
 
+<div class="govuk-button-group">
 {% button "Test Button" "primary" %}
 {% button "Start Application" "start" %}
 {% button "Start 1" "secondary" %}
 {% button "Delete" "warning" %}
 {% button "Disabled button" "primary" True %}
+</div>
+
 <div style="background-color: #1d70b8;">
 {% button "Create an account" "inverse" %}
 </div>
