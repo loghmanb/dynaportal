@@ -39,3 +39,10 @@ class ButtonTest(BaseTestCase):
             {'label': 'Delete Application', 'button_type': 'warning'}
             )
         self.assertEqual(rendered, '\n<button class="govuk-button govuk-button--warning" data-module="govuk-button">\n    Delete Application\n</button>\n')
+
+    def test_button_inverse(self):
+        rendered = self.render_template(
+            self.template,
+            {'label': 'Create account', 'button_type': 'inverse'}
+            )
+        self.assertEqual(rendered, '\n<button class="govuk-button govuk-button--inverse" data-module="govuk-button">\n    Create account\n</button>\n')

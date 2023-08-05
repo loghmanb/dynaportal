@@ -12,6 +12,9 @@
 {% button "Test Button" "primary" %}
 {% button "Start 1" "secondary" %}
 {% button "Delete" "warning" %}
+<div style="background-color: #1d70b8;">
+{% button "Create an account" "inverse" %}
+</div>
 
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
