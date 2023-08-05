@@ -32,3 +32,10 @@ class ButtonTest(BaseTestCase):
             {'label': 'Find address', 'button_type': 'secondary'}
             )
         self.assertEqual(rendered, '\n<button class="govuk-button govuk-button--secondary" data-module="govuk-button">\n    Find address\n</button>\n')
+
+    def test_button_warning(self):
+        rendered = self.render_template(
+            self.template,
+            {'label': 'Delete Application', 'button_type': 'warning'}
+            )
+        self.assertEqual(rendered, '\n<button class="govuk-button govuk-button--warning" data-module="govuk-button">\n    Delete Application\n</button>\n')
