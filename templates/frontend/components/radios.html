@@ -1,11 +1,13 @@
-<div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          Where do you live?
-        </h1>
-      </legend>
-      <div class="govuk-radios" data-module="govuk-radios">
+{% extends "frontend/components/base_component/base_component.html" %}
+{% load common %}
+{% block component_body %}
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    {% field_label field.id field.caption one_question %}
+  </legend>
+  {% hint field.hint %}
+  {% field_error field.error %}
+  <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
           <label class="govuk-label govuk-radios__label" for="where-do-you-live">
@@ -31,5 +33,5 @@
           </label>
         </div>
       </div>
-    </fieldset>
-</div>
+</fieldset>
+{% endblock %}
