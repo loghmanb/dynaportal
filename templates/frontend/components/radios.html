@@ -1,37 +1,20 @@
 {% extends "frontend/components/base_component/base_component.html" %}
 {% load common %}
+{% load radios %}
 {% block component_body %}
 <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    {% field_label field.id field.caption one_question %}
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--{% if field.options|item:" style-bold-size" %}l{% else
+    %}m{% endif %}">
+    {% field_label field.id field.caption field.options|item:"style-bold-size" %}
   </legend>
   {% hint field.hint %}
   {% field_error field.error %}
-  <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-          <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-            England
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-          <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-            Scotland
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
-          <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-            Wales
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
-          <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-            Northern Ireland
-          </label>
-        </div>
-      </div>
+  {% if field.options|item:"inline" %}
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    {% radio_items field.id field.name field.options|item:"items" %}
+  </div>
+  {% else %}
+  {% radio_items field.id field.name field.options|item:"items" %}
+  {% endif %}
 </fieldset>
 {% endblock %}
