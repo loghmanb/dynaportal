@@ -1,0 +1,4 @@
+django-browser-reload==1.6.0
+black
+isort
+flake8
