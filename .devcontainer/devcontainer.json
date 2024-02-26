@@ -12,7 +12,7 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "frontend/views.py"
+        "dynaportal/views.py"
       ]
     },
     "vscode": {
