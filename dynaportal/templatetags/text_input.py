@@ -1,6 +1,7 @@
 """Module for InputText component."""
 
 from typing import Dict
+
 from django import template
 
 from ..common import Field
