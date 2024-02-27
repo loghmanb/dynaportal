@@ -17,9 +17,9 @@ def home(request):
                 "style-bold-size": True,
                 "items": [
                     {
-                        "caption": "France", 
+                        "caption": "France",
                         "value": "fr",
-                        "hint": "including French Southern and Antarctic Lands"
+                        "hint": "including French Southern and Antarctic Lands",
                     },
                     {
                         "caption": "Portugal",
@@ -28,9 +28,10 @@ def home(request):
                     {
                         "caption": "Spain",
                         "value": "sp",
-                    }],
+                    },
+                ],
                 "none": "No, I will not be travelling to any of these countries",
-            }
+            },
         ),
         Field(
             "address-line-id",
@@ -49,8 +50,9 @@ def home(request):
                 "size": 7,
                 "input_size": 5,
                 "is_code": True,
-                "spellchecker": False
-                }),
+                "spellchecker": False,
+            },
+        ),
         Field(
             "address-line-123",
             "address-line-1",
@@ -63,13 +65,14 @@ def home(request):
                 "input_prefix": "£",
                 "input_suffix": "per item 123",
                 "is_code": True,
-                "spellchecker": False
-                }
-            ),
-        Field("firstname",
-              "firstname",
-              FieldType.INPUT_TEXT,
-              "Firstname"),
+                "spellchecker": False,
+            },
+        ),
+        Field("firstname", "firstname", FieldType.INPUT_TEXT, "Firstname"),
     ]
-    
-    return render(request, 'dynaportal/home.html', context={"fields": fields, 'one_question': one_question})
+
+    return render(
+        request,
+        "dynaportal/home.html",
+        context={"fields": fields, "one_question": one_question},
+    )
