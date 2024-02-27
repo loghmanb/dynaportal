@@ -1,6 +1,6 @@
 """Module for common tags and filters."""
 
-from typing import Dict, List
+from typing import Dict, List, Union
 
 from django import template
 
@@ -30,11 +30,11 @@ def field_error(string: str):
 
 
 @register.filter(is_safe=True)
-def item(options: Dict | List, idx: int | str, default_value=None) -> any:
+def item(options: Union[Dict, List], idx: Union[int, str], default_value=None) -> any:
     """Item filter."""
     default_value = None
     if isinstance(idx, str):
-        args: int | List[str] = idx.split(",")
+        args: Union[int, List[str]] = idx.split(",")
         if len(args) > 1:
             idx = args[0]
             default_value = args[1]
@@ -50,4 +50,5 @@ def item(options: Dict | List, idx: int | str, default_value=None) -> any:
             return options.get(args[0], options.get(args[1], default_value))
         elif len(options) > idx:
             return options[idx]
+
     return default_value
