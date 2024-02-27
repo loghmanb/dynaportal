@@ -1,6 +1,6 @@
 """Module for common tags and filters."""
 
-from typing import List
+from typing import Dict, List
 
 from django import template
 
@@ -30,7 +30,7 @@ def field_error(string: str):
 
 
 @register.filter(is_safe=True)
-def item(options: dict | list, idx: int | str, default_value=None) -> any:
+def item(options: Dict | List, idx: int | str, default_value=None) -> any:
     """Item filter."""
     default_value = None
     if isinstance(idx, str):
