@@ -1,4 +1,5 @@
 """Dummy settings."""
+
 import os
 
 from settings.base import *  # noqa
