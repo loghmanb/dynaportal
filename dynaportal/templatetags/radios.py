@@ -1,5 +1,7 @@
 """Module for Checkboxes component."""
+
 from typing import List
+
 from django.template import Library, RequestContext
 
 from ..common import Field
