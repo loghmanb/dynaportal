@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .common import Field, FieldType
+from dynaportal.common import Field, FieldType
 
 
 def home(request):

@@ -1,2 +1,3 @@
 django
-dynaportal==0.0.1a7
+dynaportal==0.0.2
+django-browser-reload==1.6.0
