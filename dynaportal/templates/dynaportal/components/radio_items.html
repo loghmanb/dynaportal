@@ -1,7 +1,8 @@
 {% load common %}
 <div class="govuk-radios" data-module="govuk-radios">
-    {% for item in items %}
-    <div class="govuk-radios__item">
+    {% for item in items %}{%if item.divider %}
+    <div class="govuk-radios__divider">{{item.divider}}</div>
+{%endif%}<div class="govuk-radios__item">
         <input class="govuk-radios__input" id="{{field_id}}-{{item|item:'value'}}" name="{{name}}" type="radio"
             value="{{item|item:'value'}}">
         <label class="govuk-label govuk-radios__label" for="{{field.id}}-{{item|item:'value'}}">

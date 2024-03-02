@@ -33,18 +33,19 @@ def home(request):
             FieldType.RADIOS,
             "Where do you live?",
             options={
-                "style-bold-size": True,
-                "inline": True,
+                "style-bold-size": False,
+                "inline": False,
                 "items": [
                     {
                         "caption": "England",
                         "value": "england",
-                        "hint": "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before.",
+                        #"hint": "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before.",
                     },
                     {
+                        "divider": "or",
                         "caption": "Wales",
                         "value": "wales",
-                        "hint": "If you don’t have a GOV.UK One Login, you can create one.",
+                        #"hint": "If you don’t have a GOV.UK One Login, you can create one.",
                     },
                 ],
             },
