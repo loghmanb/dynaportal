@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django_browser_reload",
     "dynaportal",
+    "sample_form",
 ]
 
 MIDDLEWARE = [

@@ -86,7 +86,7 @@ setup(
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     install_requires=["django>=3.0", 'backports.zoneinfo;python_version<"3.9"'],
-    package_data={"dynaportal": ["templates/dynaportal/*.html", "static/**"]},
+    package_data={"dynaportal": ["templates/dynaportal/**", "static/**"]},
     python_requires=">=3.6",
     zip_safe=False,
     classifiers=[
