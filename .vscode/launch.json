@@ -9,6 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/example/manage.py",
+            "cwd": "${workspaceFolder}/example",
             "args": [
                 "runserver"
             ],

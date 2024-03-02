@@ -9,14 +9,14 @@ from ..common import Field
 register = Library()
 
 
-@register.inclusion_tag("frontend/components/radios.html", takes_context=True)
+@register.inclusion_tag("dynaportal/components/radios.html", takes_context=True)
 def radios(context: RequestContext, field: Field) -> RequestContext:
     """Radios tag."""
     context["field"] = field
     return context
 
 
-@register.inclusion_tag("frontend/components/radio_items.html", takes_context=True)
+@register.inclusion_tag("dynaportal/components/radio_items.html", takes_context=True)
 def radio_items(
     context: RequestContext, field_id: str, name: str, items: List
 ) -> RequestContext:
