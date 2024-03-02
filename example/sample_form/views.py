@@ -7,6 +7,27 @@ def home(request):
     one_question = False
     fields = [
         Field(
+            "chaged-name",
+            "change-name",
+            FieldType.RADIOS,
+            "Have you changed your name?",
+            hint="This includes changing your last name or spelling your name differently.",
+            options={
+                "style-bold-size": True,
+                "inline": True,
+                "items": [
+                    {
+                        "caption": "Yes",
+                        "value": "yes",
+                    },
+                    {
+                        "caption": "No",
+                        "value": "no",
+                    },
+                ],
+            },
+        ),
+        Field(
             "live-id",
             "live",
             FieldType.RADIOS,
@@ -28,6 +49,8 @@ def home(request):
                 ],
             },
         ),
+    ]
+    """
         Field(
             "countries-id",
             "countries",
@@ -92,7 +115,7 @@ def home(request):
         ),
         Field("firstname", "firstname", FieldType.INPUT_TEXT, "Firstname"),
     ]
-
+    """
     return render(
         request,
         "dynaportal/home.html",
