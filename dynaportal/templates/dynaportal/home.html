@@ -5,6 +5,7 @@
 {% load  checkboxes %}
 {% load text_input %}
 {% load button %}
+{% load radios %}
 
 {% block content %}
 <h1 class="govuk-heading-xl">Customised page template 123</h1>
@@ -27,6 +28,8 @@
 {% text_input field %}
     {% elif field.field_type.name == 'CHECKBOXES' %}
 {% checkboxes field %}
+    {% elif field.field_type.name == 'RADIOS' %}
+{% radios field %}
     {% endif %}
 {% endfor %}
 

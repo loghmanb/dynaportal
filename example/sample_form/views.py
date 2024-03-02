@@ -7,6 +7,52 @@ def home(request):
     one_question = False
     fields = [
         Field(
+            "chaged-name",
+            "change-name",
+            FieldType.RADIOS,
+            "Have you changed your name?",
+            hint="This includes changing your last name or spelling your name differently.",
+            options={
+                "style-bold-size": True,
+                "inline": True,
+                "items": [
+                    {
+                        "caption": "Yes",
+                        "value": "yes",
+                    },
+                    {
+                        "caption": "No",
+                        "value": "no",
+                    },
+                ],
+            },
+        ),
+        Field(
+            "live-id",
+            "live",
+            FieldType.RADIOS,
+            "Where do you live?",
+            options={
+                "style-bold-size": False,
+                "inline": False,
+                "items": [
+                    {
+                        "caption": "England",
+                        "value": "england",
+                        "hint": "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before.",
+                    },
+                    {
+                        "divider": "or",
+                        "caption": "Wales",
+                        "value": "wales",
+                        "hint": "If you don’t have a GOV.UK One Login, you can create one.",
+                    },
+                ],
+            },
+        ),
+    ]
+    """
+        Field(
             "countries-id",
             "countries",
             FieldType.CHECKBOXES,
@@ -70,7 +116,7 @@ def home(request):
         ),
         Field("firstname", "firstname", FieldType.INPUT_TEXT, "Firstname"),
     ]
-
+    """
     return render(
         request,
         "dynaportal/home.html",

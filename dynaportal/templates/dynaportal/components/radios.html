@@ -1,0 +1,20 @@
+{% extends "dynaportal/components/base_component/base_component.html" %}
+{% load common %}
+{% load radios %}
+{% block component_body %}
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--{% if field.options|item:" style-bold-size" %}l{% else
+    %}m{% endif %}">
+    {% field_label field.id field.caption field.options|item:"style-bold-size" %}
+  </legend>
+  {% hint field.hint %}
+  {% field_error field.error %}
+  {% if field.options|item:"inline" %}
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    {% radio_items field.id field.name field.options|item:"items" %}
+  </div>
+  {% else %}
+  {% radio_items field.id field.name field.options|item:"items" %}
+  {% endif %}
+</fieldset>
+{% endblock %}
