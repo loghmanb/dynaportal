@@ -10,7 +10,7 @@ r"""
 import django
 
 __title__ = "DynaPortal"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __author__ = "Loghman Barari"
 __license__ = "BSD 3-Clause"
 __copyright__ = "Copyright 2022-Present Loghman Barari"
