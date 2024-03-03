@@ -6,6 +6,7 @@
 {% load text_input %}
 {% load button %}
 {% load radios %}
+{% load select %}
 
 {% block content %}
 {%if page%}<h1 class="govuk-heading-xl">{{page.title}}</h1>{%endif%}
@@ -17,6 +18,8 @@
 {% checkboxes field %}
     {% elif field.field_type.name == 'RADIOS' %}
 {% radios field %}
+    {% elif field.field_type.name == 'SELECT' %}
+{% select field %}
     {% endif %}
 {% endfor %}
 </form>

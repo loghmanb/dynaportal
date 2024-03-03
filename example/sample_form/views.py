@@ -9,8 +9,9 @@ def home(request):
         Field(
             "chaged-name",
             "change-name",
-            FieldType.RADIOS,
+            FieldType.SELECT,
             "Have you changed your name?",
+            error="Select an item",
             hint="This includes changing your last name or spelling your name differently.",
             options={
                 "style-bold-size": True,
