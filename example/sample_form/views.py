@@ -120,5 +120,9 @@ def home(request):
     return render(
         request,
         "dynaportal/home.html",
-        context={"fields": fields, "one_question": one_question},
+        context={
+            "tradeMark": "DynaportalExample",
+            "fields": fields,
+            "one_question": one_question,
+        },
     )
