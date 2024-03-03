@@ -19,15 +19,11 @@
   {% block main-content %}
   <div class="govuk-width-container app-width-container">
     <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
-    
-    {% block banner %}{% include 'dynaportal/partials/banner.html' %}{% endblock %}
-
-    {% block content %}
-    {% endblock %}
-
+      {%if banner %}{% block banner %}{% include 'dynaportal/partials/banner.html' %}{% endblock banner %}{%endif%}
+      {% block content %}{% endblock content %}
     </main>
   </div>
-  {% endblock %}
+  {% endblock main-content %}
 
   {% block footer %}{% include 'dynaportal/partials/footer.html' %}{% endblock %}
   

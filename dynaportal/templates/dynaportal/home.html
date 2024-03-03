@@ -6,23 +6,11 @@
 {% load text_input %}
 {% load button %}
 {% load radios %}
+{% load select %}
 
 {% block content %}
-<h1 class="govuk-heading-xl">Customised page template 123</h1>
-
-<div class="govuk-button-group">
-{% button "Test Button" "primary" %}
-{% button "Start Application" "start" %}
-{% button "Start 1" "secondary" %}
-{% button "Delete" "warning" %}
-{% button "Disabled button" "primary" True %}
-</div>
-
-<div style="background-color: #1d70b8;">
-{% button "Create an account" "inverse" %}
-</div>
-
-
+{%if page%}<h1 class="govuk-heading-xl">{{page.title}}</h1>{%endif%}
+<form method="post" action=""{{action}}>{% csrf_token %}
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
 {% text_input field %}
@@ -30,7 +18,9 @@
 {% checkboxes field %}
     {% elif field.field_type.name == 'RADIOS' %}
 {% radios field %}
+    {% elif field.field_type.name == 'SELECT' %}
+{% select field %}
     {% endif %}
 {% endfor %}
-
+</form>
 {% endblock content %}

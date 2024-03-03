@@ -11,6 +11,7 @@ class FieldType(Enum):
     INPUT_TEXT = 1
     CHECKBOXES = 2
     RADIOS = 3
+    SELECT = 4
 
 
 @dataclass
