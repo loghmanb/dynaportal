@@ -121,6 +121,7 @@ def home(request):
         request,
         "dynaportal/home.html",
         context={
+            "action": "/",
             "tradeMark": "DynaportalExample",
             "service": {
                 "title": "Trearment plan",
