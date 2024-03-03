@@ -10,36 +10,21 @@
             <!--[if IE 8]>
           <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32" alt="">
           <![endif]-->
-            <span class="govuk-header__logotype-text">
-              DynaPortal.online
-            </span>
+            <span class="govuk-header__logotype-text">{{tradeMark}}</span>
           </span>
         </a>
       </div>
+{%if service %}
       <div class="govuk-header__content">
-        <a href="#" class="govuk-header__link govuk-header__service-name">
-          Service name
-        </a>
+        <a href="{%if service.link%}{{service.link}}{%else%}#{%endif%}" class="govuk-header__link govuk-header__service-name">{%if service.title%}{{service.title}}{%else%}[Service.title]{%endif%}</a>
         <nav aria-label="Menu" class="govuk-header__navigation ">
           <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu" hidden>Menu</button>
-          <ul id="navigation" class="govuk-header__navigation-list">
-            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-              <a class="govuk-header__link" href="#">
-                Navigation item 1
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#">
-                Navigation item 2
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#">
-                Navigation item 3
-              </a>
-            </li>
+          <ul id="navigation" class="govuk-header__navigation-list">{%for menu_item in service.menu_items%}
+            <li class="govuk-header__navigation-item {%if menu_items.active%}govuk-header__navigation-item--active{%endif%}">
+              <a class="govuk-header__link" href="{%if menu_item.active %}#{%else%}{{menu_item.link}}{%endif%}">{{menu_item.title}}</a>
+            </li>{%endfor%}
           </ul>
         </nav>
-      </div>
+      </div>{%endif%}
     </div>
   </header>

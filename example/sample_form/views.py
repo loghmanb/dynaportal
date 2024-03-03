@@ -122,6 +122,24 @@ def home(request):
         "dynaportal/home.html",
         context={
             "tradeMark": "DynaportalExample",
+            "service": {
+                "title": "Trearment plan",
+                "link": "/",
+                "menu_items": [
+                    {
+                        "title": "Generate new treatment plan",
+                        "active": True,
+                        "link": "generate",
+                    }
+                ],
+            },
+            "banner": {
+                "tag": "alpha",
+                "text": "In the first phase, it is just focus on generating a treatment plan!",
+            },
+            "page": {
+                "title": "Generate treatment plan [Dentition]",
+            },
             "fields": fields,
             "one_question": one_question,
         },
