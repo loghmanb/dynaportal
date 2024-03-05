@@ -1,4 +1,5 @@
 """Module for Heading component."""
+
 from django.template import Library, RequestContext
 
 from ..common import Field

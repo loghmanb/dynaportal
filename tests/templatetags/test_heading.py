@@ -1,4 +1,5 @@
 """Module for testing common tags and filters."""
+
 from dynaportal.common import Field, FieldType
 
 from . import BaseTestCase
