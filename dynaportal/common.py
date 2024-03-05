@@ -12,6 +12,7 @@ class FieldType(Enum):
     CHECKBOXES = 2
     RADIOS = 3
     SELECT = 4
+    HEADING = 5
 
 
 @dataclass
