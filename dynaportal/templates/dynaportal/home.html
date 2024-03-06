@@ -25,6 +25,8 @@
 {% heading field %}
     {% endif %}
 {% endfor %}
-{% button 'Submit' '' %} 
+{% for btn  in buttons %}
+{% button 'Submit' 'submit' '' %}
+{% endfor %}
 </form>
 {% endblock content %}

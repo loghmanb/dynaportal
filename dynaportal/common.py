@@ -26,3 +26,12 @@ class Field:
     hint: str = ""
     error: str = ""
     options: Dict = field(default_factory=dict)
+
+
+@dataclass
+class Button:
+    """Button data class."""
+    label: str
+    type: str
+    disabled: bool
+    value: str
