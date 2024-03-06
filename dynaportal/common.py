@@ -31,6 +31,7 @@ class Field:
 @dataclass
 class Button:
     """Button data class."""
+
     label: str
     type: str
     disabled: bool
