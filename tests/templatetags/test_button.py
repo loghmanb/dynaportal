@@ -25,7 +25,7 @@ class ButtonTest(BaseTestCase):
         )
         self.assertEqual(
             rendered,
-            '\n<button class="govuk-button " data-module="govuk-button">\n    Test Button\n</button>\n',
+            '\n<button value="" class="govuk-button " data-module="govuk-button">\n    Test Button\n</button>\n',
         )
 
     def test_button_secondary(self):
@@ -34,7 +34,7 @@ class ButtonTest(BaseTestCase):
         )
         self.assertEqual(
             rendered,
-            '\n<button class="govuk-button govuk-button--secondary" data-module="govuk-button">\n    Find address\n</button>\n',
+            '\n<button value="" class="govuk-button govuk-button--secondary" data-module="govuk-button">\n    Find address\n</button>\n',
         )
 
     def test_button_warning(self):
@@ -43,7 +43,7 @@ class ButtonTest(BaseTestCase):
         )
         self.assertEqual(
             rendered,
-            '\n<button class="govuk-button govuk-button--warning" data-module="govuk-button">\n    Delete Application\n</button>\n',
+            '\n<button value="" class="govuk-button govuk-button--warning" data-module="govuk-button">\n    Delete Application\n</button>\n',
         )
 
     def test_button_inverse(self):
@@ -53,7 +53,7 @@ class ButtonTest(BaseTestCase):
         )
         self.assertEqual(
             rendered,
-            '\n<button class="govuk-button govuk-button--inverse" data-module="govuk-button">\n    Create account\n</button>\n',
+            '\n<button value="" class="govuk-button govuk-button--inverse" data-module="govuk-button">\n    Create account\n</button>\n',
         )
 
     def test_button_disabled(self):
@@ -63,5 +63,5 @@ class ButtonTest(BaseTestCase):
         )
         self.assertEqual(
             rendered,
-            '\n<button disabled="disabled" class="govuk-button " data-module="govuk-button">\n    Disabled button\n</button>\n',
+            '\n<button value="True" class="govuk-button " data-module="govuk-button">\n    Disabled button\n</button>\n',
         )
