@@ -10,7 +10,7 @@
   {% endif %}
   <input type="text" 
     class="govuk-input {% if field.options|item:'input_size|size' %} govuk-input--width-{{field.options|item:'input_size|size'}} {% endif %}{% if field.error %} govuk-input--error {% endif %}{% if field.options|item:'is_code' %} govuk-input--extra-letter-spacing {% endif %}" 
-    id="{{ field.id }}" name="{{ field.name }}" value="{{ field.value }}"
+    id="{{ field.id }}" name="{{ field.name }}" {%if field.value != None%}value="{{ field.value }}"{%endif%}
     {% if field.options|item:'autocomplete' %}autocomplete="{{ field.options|item:'autocomplete' }}"{% endif %}
     {% if field.options|item:'size' %}maxlength='{{field.options|item:"size"}}'{% endif %}
     {% if field.options|item:'spellchecker' == False %}spellcheck="false"{% endif %}>

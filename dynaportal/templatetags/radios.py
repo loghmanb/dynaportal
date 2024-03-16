@@ -18,7 +18,11 @@ def radios(context: RequestContext, field: Field) -> RequestContext:
 
 @register.inclusion_tag("dynaportal/components/radio_items.html", takes_context=True)
 def radio_items(
-    context: RequestContext, field_id: str, name: str, items: List, value: Any = None,
+    context: RequestContext,
+    field_id: str,
+    name: str,
+    items: List,
+    value: Any = None,
 ) -> RequestContext:
     """Radio items tag."""
     context["field_id"] = field_id
