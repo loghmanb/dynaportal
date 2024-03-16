@@ -11,10 +11,10 @@
   {% field_error field.error %}
   {% if field.options|item:"inline" %}
   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-    {% radio_items field.id field.name field.options|item:"items" %}
+    {% radio_items field.id field.name field.options|item:"items" field.value %}
   </div>
   {% else %}
-  {% radio_items field.id field.name field.options|item:"items" %}
+  {% radio_items field.id field.name field.options|item:"items" field.value %}
   {% endif %}
 </fieldset>
 {% endblock %}

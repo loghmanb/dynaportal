@@ -7,8 +7,8 @@
     {% hint field.hint %}
     {% field_error field.error %}
     <select class="govuk-select {%if field.error%}govuk-select--error{%endif%}" id="{{field.id}}" name="{{field.name}}">
-      <option value="" selected>Choose an item</option>{% for item in field.options|item:"items" %}
-      <option value="{{item|item:'value'}}">{{item|item:'caption'}}</option>{% endfor %}
+      {%if field.value == None %}<option value="" selected>Choose an item</option>{%endif%}{% for item in field.options|item:"items" %}
+      <option value="{{item|item:'value'}}" {%if field.value == item|item:'value' %}selected{%endif%}>{{item|item:'caption'}}</option>{% endfor %}
     </select>
   </div>
 {% endblock component_body %}
