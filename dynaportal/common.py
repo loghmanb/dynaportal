@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict
+from typing import Any, Dict
 
 
 class FieldType(Enum):
@@ -25,6 +25,7 @@ class Field:
     caption: str
     hint: str = ""
     error: str = ""
+    value: Any = None
     options: Dict = field(default_factory=dict)
 
 
