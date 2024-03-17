@@ -1,9 +1,21 @@
+{% load common %}
+<script>
+function change_selected_field(field) {
+debugger;
+document.getElementsByName('selected_field')[0].value = field;
+document.getElementsByTagName('form')[0].submit();
+}
+</script>
 <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Name</dt>
-    <dd class="govuk-summary-list__value">Charlse Dikens</dd>
-    <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
+<input name="selected_field" type="hidden">
+<input name="field_values" type="hidden" value="{{fields|values}}">
+  {% for field in fields %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">{{ field.caption }}</dt>
+      <dd class="govuk-summary-list__value">{{ field|value_label:field.value }}</dd>
+      <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#" onclick="change_selected_field('{{field.name}}')">Change<span class="govuk-visually-hidden"> field.caption</span></a>
+      </dd>
+    </div>
+  {% endfor %}
 </dl>
