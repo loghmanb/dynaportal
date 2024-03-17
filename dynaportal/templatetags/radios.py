@@ -1,6 +1,6 @@
 """Module for Checkboxes component."""
 
-from typing import List
+from typing import Any, List
 
 from django.template import Library, RequestContext
 
@@ -18,10 +18,15 @@ def radios(context: RequestContext, field: Field) -> RequestContext:
 
 @register.inclusion_tag("dynaportal/components/radio_items.html", takes_context=True)
 def radio_items(
-    context: RequestContext, field_id: str, name: str, items: List
+    context: RequestContext,
+    field_id: str,
+    name: str,
+    items: List,
+    value: Any = None,
 ) -> RequestContext:
     """Radio items tag."""
     context["field_id"] = field_id
     context["name"] = name
     context["items"] = items
+    context["value"] = value
     return context
