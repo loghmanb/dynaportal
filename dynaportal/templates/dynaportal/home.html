@@ -16,7 +16,7 @@
 <input name="state" type="hidden" value="{{state}}" />
 <input name="page-step" type="hidden" value="{{page.step}}" />
 {% if page.step == 'welcome' %}
-{{welcome_page | safe}}
+{{page.welcome_page | safe}}
 {% elif view_summary %}
 {% summary_list fields %}
 {% else %}
