@@ -20,6 +20,11 @@
 {% elif view_summary %}
 {% summary_list fields %}
 {% else %}
+{% if error %}
+<p class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> {{error}}
+</p>
+{% endif %}
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
 {% text_input field %}
