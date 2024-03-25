@@ -12,7 +12,7 @@
 
 {% block content %}
 {%if page.title %}<h1 class="govuk-heading-xl">{{page.title}}</h1>{%endif%}
-<form method="post" action=""{{action}}>{% csrf_token %}
+<form method="post" action="{{action}}">{% csrf_token %}
 <input name="state" type="hidden" value="{{state}}" />
 <input name="page-step" type="hidden" value="{{page.step}}" />
 {% if page.step == 'welcome' %}
