@@ -11,12 +11,20 @@
 {% load summary_list %}
 
 {% block content %}
-{%if page%}<h1 class="govuk-heading-xl">{{page.title}}</h1>{%endif%}
+{%if page.title %}<h1 class="govuk-heading-xl">{{page.title}}</h1>{%endif%}
 <form method="post" action=""{{action}}>{% csrf_token %}
-<input name="state" type="hidden" value="{{state}}">
-{% if view_summary %}
+<input name="state" type="hidden" value="{{state}}" />
+<input name="page-step" type="hidden" value="{{page.step}}" />
+{% if page.step == 'welcome' %}
+{{page.welcome_page | safe}}
+{% elif view_summary %}
 {% summary_list fields %}
 {% else %}
+{% if error %}
+<p class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> {{error}}
+</p>
+{% endif %}
 {% for field in fields %}
     {% if field.field_type.name == 'INPUT_TEXT' %}
 {% text_input field %}
@@ -32,7 +40,7 @@
 {% endfor %}
 {% endif %}
 {% for btn  in buttons %}
-{% button 'Submit' 'submit' '' %}
+{% button btn.label btn.value btn.type %}
 {% endfor %}
 </form>
 {% endblock content %}
